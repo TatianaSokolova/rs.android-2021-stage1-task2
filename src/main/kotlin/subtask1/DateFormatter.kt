@@ -1,6 +1,7 @@
 package subtask1
 
 import java.text.SimpleDateFormat
+import java.util.*
 
 class DateFormatter {
 
@@ -16,8 +17,8 @@ class DateFormatter {
         if (month.toInt() > 12) return "Такого дня не существует"
 
         var date = "$day $month $year"
-        val format = SimpleDateFormat("dd MM yyyy").parse(date)
-        val format2 = SimpleDateFormat("dd MMMM, EEEE").format(format)
+        val format = SimpleDateFormat("dd MM yyyy", Locale("ru")).parse(date)
+        val format2 = SimpleDateFormat("dd MMMM, EEEE", Locale("ru")).format(format)
 
         return format2
     }
